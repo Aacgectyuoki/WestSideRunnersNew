@@ -1,0 +1,22 @@
+h2 {
+    text-align: center;
+  }
+  
+  .carousel-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .carousel-container img {
+    width: 100%;
+    height: 400px; /* Adjust the height as per your needs */
+    object-fit: cover;
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 18px;
+  }
