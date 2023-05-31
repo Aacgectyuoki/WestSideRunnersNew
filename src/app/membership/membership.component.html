@@ -102,7 +102,7 @@
     [formControl]="address1FormControl"
     [errorStateMatcher]="matcher"
     placeholder="Ex. 100 Main St"
-    name="full_address">
+    name="address1">
     <mat-error *ngIf="address1FormControl.hasError('textarea') && !address1FormControl.hasError('required')">
       Please enter Address 1 (Building # and Street)
     </mat-error>
@@ -112,7 +112,8 @@
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Address 2 (Ex. Apartment #)</mat-label>
-    <input matInput>
+    <input matInput
+    name="address2">
   </mat-form-field>
 
 <table class="example-full-width" cellspacing="0"><tr>
@@ -120,7 +121,8 @@
     <mat-label>City</mat-label>
     <input matInput [formControl]="cityFormControl" 
     [errorStateMatcher]="matcher"
-    placeholder="Ex. San Francisco">
+    placeholder="Ex. San Francisco"
+    name="city">
     <mat-error *ngIf="cityFormControl.hasError('text') && !nameFormControl.hasError('required')">
       Please enter your city!
     </mat-error>
@@ -133,7 +135,8 @@
     <mat-label>State</mat-label>
     <input matInput [formControl]="stateFormControl" 
     [errorStateMatcher]="matcher"
-    placeholder="Ex. California">
+    placeholder="Ex. California"
+    name="state">
     <mat-error *ngIf="stateFormControl.hasError('text') && !stateFormControl.hasError('required')">
       Please enter your state!
     </mat-error>
@@ -150,7 +153,8 @@
     <input matInput #postalCode maxlength="5" 
     [formControl]="zipFormControl" 
     [errorStateMatcher]="matcher"
-    placeholder="Ex. 94105">
+    placeholder="Ex. 94105"
+    name="zip">
     <mat-error *ngIf="zipFormControl.hasError('text') && !zipFormControl.hasError('required')">
       Please enter your zip/postal code!
     </mat-error>
@@ -209,7 +213,7 @@
 </mat-form-field>
 <br>
 
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary" routerLink="/membership">Submit</button>
 
 </form>
 

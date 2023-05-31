@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+//import React from 'react';
+import { ElfsightWidget } from 'react-elfsight-widget';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +26,10 @@ export class HomeComponent implements OnInit {
     touch: true,
     easing: 'ease'
   };
+
+  // Component() {
+  //   return <ElfsightWidget widgetID="9a6766b7-695f-4c28-866c-28441465ee86" />;
+  // }
 
   constructor() { }
 

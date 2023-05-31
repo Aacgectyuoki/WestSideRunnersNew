@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, FormsModule, ReactiveFormsModule, NgForm, Validators, FormBuilder } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { Router } from '@angular/router';
 import emailjs, { EmailJSResponseStatus, init } from '@emailjs/browser';
 init("user_66nwzX6xZ5j1WCaDKBM51");
 
@@ -89,6 +90,7 @@ backgroundFormControl = new FormControl('', [
 ]);
 
 matcher = new MyErrorStateMatcher();
+  submitted!: false;
   // formData = {
   //   name: '',
   //   email: '',
@@ -103,7 +105,7 @@ matcher = new MyErrorStateMatcher();
   //   window.open(`mailto:maxdell-thibodeau@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`);
   // }
 
-   constructor(private _formBuilder: FormBuilder) { }
+   constructor(private _formBuilder: FormBuilder, private router: Router) { }
 
    ngOnInit(): void { }
 
@@ -112,8 +114,13 @@ matcher = new MyErrorStateMatcher();
     emailjs.sendForm('service_kjtfle7', 'template_0l318gy', e.target as HTMLFormElement, 'user_66nwzX6xZ5j1WCaDKBM51')
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text);
+        window.location.reload();
       }, (error) => {
         console.log(error.text);
       });
   }
+
+//   goToPage(pageName:string){
+//     this.router.navigate([`${pageName}`]);
+//   }
 }
