@@ -60,7 +60,7 @@
     <mat-label>Telephone Number</mat-label>
     <!-- <span matPrefix>+1 &nbsp;</span> -->
     <input type="phone" matInput 
-    [formControl]="nameFormControl" 
+    [formControl]="phoneFormControl" 
     [errorStateMatcher]="matcher"
     placeholder="555-555-1234"
     name="phone">
@@ -200,14 +200,14 @@
 <!-- Running Background -->
 <mat-form-field class="example-full-width" appearance="fill">
   <mat-label>Running Background (Why do you run?)</mat-label>
-  <textarea matInput [formControl]="nameFormControl" 
+  <textarea matInput [formControl]="backgroundFormControl" 
   [errorStateMatcher]="matcher"
   placeholder="Ex. I run because ..."
   name="background"></textarea>
-  <mat-error *ngIf="nameFormControl.hasError('textarea') && !nameFormControl.hasError('required')">
+  <mat-error *ngIf="backgroundFormControl.hasError('textarea') && !backgroundFormControl.hasError('required')">
     Please enter your running background!
   </mat-error>
-  <mat-error *ngIf="nameFormControl.hasError('required')">
+  <mat-error *ngIf="backgroundFormControl.hasError('required')">
     Running Background is <strong>required</strong>
   </mat-error>
 </mat-form-field>
