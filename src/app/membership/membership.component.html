@@ -200,16 +200,15 @@
 <!-- Running Background -->
 <mat-form-field class="example-full-width" appearance="fill">
   <mat-label>Running Background (Why do you run?)</mat-label>
-  <textarea matInput [formControl]="backgroundFormControl" 
-  [errorStateMatcher]="matcher"
-  placeholder="Ex. I run because ..."
+  <textarea matInput 
+  placeholder="Ex. I run because ..." 
   name="background"></textarea>
-  <mat-error *ngIf="backgroundFormControl.hasError('textarea') && !backgroundFormControl.hasError('required')">
+  <!-- <mat-error *ngIf="backgroundFormControl.hasError('textarea') && !backgroundFormControl.hasError('required')">
     Please enter your running background!
   </mat-error>
   <mat-error *ngIf="backgroundFormControl.hasError('required')">
     Running Background is <strong>required</strong>
-  </mat-error>
+  </mat-error> -->
 </mat-form-field>
 <br>
 

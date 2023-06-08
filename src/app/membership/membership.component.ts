@@ -84,10 +84,10 @@ emailFormControl = new FormControl('', [
   Validators.email,
 ]);
 
-backgroundFormControl = new FormControl('', [
-  Validators.required,
-  Validators.minLength(1),
-]);
+// backgroundFormControl = new FormControl('', [
+//   Validators.required,
+//   Validators.minLength(1),
+// ]);
 
 matcher = new MyErrorStateMatcher();
   submitted!: false;
@@ -115,6 +115,7 @@ matcher = new MyErrorStateMatcher();
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text);
         window.location.reload();
+        window.scrollTo(0,0);
       }, (error) => {
         console.log(error.text);
       });
