@@ -26,3 +26,14 @@
     border-right: 0;
     border-radius: 0 4px 4px 0;
   }
+
+  .nav-links a {
+    color: #ffffff; /* Sets the font color to white */
+    margin-left: 15px; /* Adds space to the right of each link */
+  }
+  
+  /* Optional: remove margin from the last item */
+  .nav-links a:last-child {
+    margin-right: 0;
+  }
+  

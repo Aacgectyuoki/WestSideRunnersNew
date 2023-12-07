@@ -1,4 +1,4 @@
-<nav class="navigation">
+<!-- <nav class="navigation">
   <ul class="nav nav-tabs">
     <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
     <li class="nav-item"><a class="nav-link" routerLink="/about-us">About Us</a></li>
@@ -7,8 +7,49 @@
     <li class="nav-item"><a class="nav-link" routerLink="/training">Training</a></li>
     <li class="nav-item"><a class="nav-link" routerLink="/records">Records</a></li>
   </ul>
-</nav>
+</nav> -->
+<div style="height: 80vh;">
+  <mat-toolbar style="background-color: #ff0000;">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <!-- Image logo -->
+      <img src="assets/wsr-logo.png" alt="Logo" style="height: 100%;">
+      <!-- The rest of your toolbar content -->
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md class="nav-links">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a routerLink="/" mat-button>Home</a>
+        <a routerLink="/about-us" mat-button>About Us</a>
+        <a routerLink="/membership" mat-button>Membership</a>
+        <a routerLink="/sponsors" mat-button>Sponsors</a>
+        <a routerLink="/training" mat-button>Training</a>
+        <a routerLink="/records" mat-button>Records</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav mode="side" opened="false">
+      <mat-nav-list>
+        <a mat-list-item (click)="sidenav.toggle()">Close</a>
+        <a mat-list-item routerLink="/" (click)="sidenav.toggle()">Home</a>
+        <a mat-list-item routerLink="/about-us" (click)="sidenav.toggle()">About Us</a>
+        <a mat-list-item routerLink="/membership" (click)="sidenav.toggle()">Membership</a>
+        <a mat-list-item routerLink="/sponsors" (click)="sidenav.toggle()">Sponsors</a>
+        <a mat-list-item routerLink="/training" (click)="sidenav.toggle()">Training</a>
+        <a mat-list-item routerLink="/records" (click)="sidenav.toggle()">Records</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill class="main-content">
+      <!-- Main content will be rendered here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
 <!-- 
 <mat-slider min="1" max="100" step="1" value="50"></mat-slider> -->
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
